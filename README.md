@@ -2,10 +2,12 @@
 
 **Give your AI the power to draw.** Architecture diagrams, flowcharts, wireframes, sketches — generated from a single chat message.
 
-Whiteboard MCP is a [Model Context Protocol](https://modelcontextprotocol.io/) server that gives AI agents like Claude a real canvas to draw on. Your AI describes what to draw, and you watch it appear in real-time.
+**[whiteboard-mcp.com](https://whiteboard-mcp.com)** — Get started in 30 seconds
 
 [![npm version](https://img.shields.io/npm/v/whiteboard-mcp)](https://www.npmjs.com/package/whiteboard-mcp)
 [![License: Proprietary](https://img.shields.io/badge/license-Proprietary-blue)](https://whiteboard-mcp.com)
+
+Whiteboard MCP is a [Model Context Protocol](https://modelcontextprotocol.io/) server that gives AI agents like Claude a real canvas to draw on. Your AI describes what to draw, and you watch it appear in real-time.
 
 ---
 
@@ -33,9 +35,19 @@ The canvas opens in your browser. Shapes appear in real-time as the AI draws. Yo
 
 ## Quick Start
 
-### Install
+### The easiest way
 
-Add Whiteboard MCP to your editor's MCP configuration:
+Just paste this into your AI assistant (Claude Code, Cursor, etc.):
+
+> Install the whiteboard-mcp MCP server for me. You can find install instructions at https://whiteboard-mcp.com and the package at https://www.npmjs.com/package/whiteboard-mcp — add it to my MCP config so I can use it. Then open the canvas and draw me a quick test diagram.
+
+Your AI should handle the rest. Restart your AI assistant afterwards.
+
+### Manual install
+
+For full install instructions with editor-specific configs, visit **[whiteboard-mcp.com](https://whiteboard-mcp.com/#install)**.
+
+Or add Whiteboard MCP to your editor's MCP configuration directly:
 
 <details>
 <summary><strong>Claude Code</strong></summary>

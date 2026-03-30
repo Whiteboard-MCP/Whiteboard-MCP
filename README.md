@@ -1,4 +1,4 @@
-# Whiteboard MCP
+# Whiteboard-MCP
 
 **Give your AI the power to draw.** Architecture diagrams, flowcharts, wireframes, sketches — generated from a single chat message.
 

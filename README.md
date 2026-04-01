@@ -1,4 +1,4 @@
-# Whiteboard-MCP
+# Whiteboard MCP
 
 **Give your AI the power to draw.** Architecture diagrams, flowcharts, wireframes, sketches — generated from a single chat message.
 
@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/whiteboard-mcp)](https://www.npmjs.com/package/whiteboard-mcp)
 [![License: Proprietary](https://img.shields.io/badge/license-Proprietary-blue)](https://whiteboard-mcp.com)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d86d5dbd-c591-4736-8315-11be5c7b4b3f" alt="Whiteboard MCP demo" width="760">
+</p>
 
 Whiteboard MCP is a [Model Context Protocol](https://modelcontextprotocol.io/) server that gives AI agents like Claude a real canvas to draw on. Your AI describes what to draw, and you watch it appear in real-time.
 
@@ -39,7 +43,7 @@ The canvas opens in your browser. Shapes appear in real-time as the AI draws. Yo
 
 Just paste this into your AI assistant (Claude Code, Cursor, etc.):
 
-> Install the whiteboard-mcp MCP server for me. You can find install instructions at https://whiteboard-mcp.com and the package at https://www.npmjs.com/package/whiteboard-mcp — add it to my MCP config so I can use it. Then open the canvas and draw me a quick test diagram.
+> Install the whiteboard-mcp MCP server for me. You can find install instructions at https://whiteboard-mcp.com — add it to my MCP config so I can use it. Then open the canvas and draw me a quick test diagram.
 
 Your AI should handle the rest. Restart your AI assistant afterwards.
 
@@ -52,7 +56,20 @@ Or add Whiteboard MCP to your editor's MCP configuration directly:
 <details>
 <summary><strong>Claude Code</strong></summary>
 
-Add to `.mcp.json` in your project root, or `~/.claude/settings.json` for global access:
+**Project-level** — add to `.mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "whiteboard": {
+      "command": "npx",
+      "args": ["-y", "whiteboard-mcp"]
+    }
+  }
+}
+```
+
+**Global** — add to `~/.claude/settings.json` to make it available in all projects:
 
 ```json
 {
@@ -160,6 +177,100 @@ Add to your Zed `settings.json` under `context_servers`:
         "path": "npx",
         "args": ["-y", "whiteboard-mcp"]
       }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>OpenCode</strong></summary>
+
+Add to `opencode.json` in your project root, or `~/.config/opencode/opencode.json` for global:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "whiteboard-mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "whiteboard-mcp"],
+      "enabled": true
+    }
+  }
+}
+```
+
+> **Note:** OpenCode uses `"mcp"` (not `"mcpServers"`) and command is an array.
+
+</details>
+
+<details>
+<summary><strong>Amp</strong></summary>
+
+Add to `.amp/settings.json` in your project root, or `~/.config/amp/settings.json` for global:
+
+```json
+{
+  "amp.mcpServers": {
+    "whiteboard-mcp": {
+      "command": "npx",
+      "args": ["-y", "whiteboard-mcp"]
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Roo Code</strong></summary>
+
+Add to `.roo/mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "whiteboard": {
+      "command": "npx",
+      "args": ["-y", "whiteboard-mcp"]
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Cline</strong></summary>
+
+Open Cline settings > MCP Servers > Edit Global MCP, then add:
+
+```json
+{
+  "mcpServers": {
+    "whiteboard": {
+      "command": "npx",
+      "args": ["-y", "whiteboard-mcp"]
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Amazon Q Developer</strong></summary>
+
+Add to `.amazonq/mcp.json` in your project root, or `~/.aws/amazonq/mcp.json` for global:
+
+```json
+{
+  "mcpServers": {
+    "whiteboard": {
+      "command": "npx",
+      "args": ["-y", "whiteboard-mcp"]
     }
   }
 }
